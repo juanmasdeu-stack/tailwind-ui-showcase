@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tailwind UI Showcase
+
+A shared library of Tailwind CSS styled components built with Next.js 14+.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+*   **Node.js**: v18.17.0 or later
+*   **Package Manager**: npm, yarn, pnpm, or bun
 
 ## Getting Started
 
-First, run the development server:
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/juanmasdeu-stack/tailwind-ui-showcase.git
+    cd tailwind-ui-showcase
+    ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How to Add a New Component
 
-## Learn More
+to contribute a new component to the library, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Create the Component File**:
+    *   Navigate to `components/ui/`.
+    *   Create a new file, e.g., `my-new-component.tsx`.
+    *   Define your component using Tailwind CSS classes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```tsx
+    // components/ui/my-new-component.tsx
+    export function MyNewComponent({ children }: { children: React.ReactNode }) {
+      return (
+        <div className="p-4 bg-white rounded-lg shadow dark:bg-slate-800">
+          {children}
+        </div>
+      );
+    }
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Export the Component (Optional)**:
+    *   If you have an `index.ts` in `components/ui`, export it there.
 
-## Deploy on Vercel
+3.  **Showcase the Component**:
+    *   Create or update a page in `app/` to demonstrate the component.
+    *   For example, to add to the "Buttons" page, edit `app/buttons/page.tsx`.
+    *   Import and use your new component to show how it looks.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   `app/`: App Router pages (Showcase pages).
+*   `components/`: Reusable React components.
+    *   `components/ui/`: Atomic UI components (Buttons, Inputs, etc.).
+*   `public/`: Static assets.
